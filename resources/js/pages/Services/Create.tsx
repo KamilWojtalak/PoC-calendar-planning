@@ -159,7 +159,7 @@ export default function Index() {
                     <form onSubmit={handleSubmit} className="space-y-8">
                         {/* Termin serwisu */}
                         <div className="border-t pt-6">
-                            <h4 className="mb-4 text-lg font-semibold text-indigo-700">Termin serwisu</h4>
+                            <h4 className="mb-4 text-lg font-semibold text-sky-700">Termin serwisu</h4>
                             <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2">
                                 <div>
                                     <label htmlFor="serviceStartDate" className="block text-sm font-medium text-gray-700">
@@ -172,7 +172,7 @@ export default function Index() {
                                             name="serviceStartDate"
                                             value={formData.serviceStartDate}
                                             onChange={handleInputChange}
-                                            className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                            className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                         />
                                         <input
                                             type="time"
@@ -180,7 +180,7 @@ export default function Index() {
                                             name="serviceStartTime"
                                             value={formData.serviceStartTime}
                                             onChange={handleInputChange}
-                                            className="block w-40 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                            className="block w-40 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                         />
                                     </div>
                                 </div>
@@ -195,7 +195,7 @@ export default function Index() {
                                             name="serviceEndDate"
                                             value={formData.serviceEndDate}
                                             onChange={handleInputChange}
-                                            className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                            className="block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                         />
                                         <input
                                             type="time"
@@ -203,7 +203,7 @@ export default function Index() {
                                             name="serviceEndTime"
                                             value={formData.serviceEndTime}
                                             onChange={handleInputChange}
-                                            className="block w-40 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                            className="block w-40 rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                         />
                                     </div>
                                 </div>
@@ -212,8 +212,8 @@ export default function Index() {
 
                         {/* Sekcja Klienta */}
                         <div className="border-t pt-6">
-                            <h4 className="mb-4 text-lg font-semibold text-indigo-700">Firma klienta</h4>
-                            <div className="space-y-4 rounded-md border border-indigo-200 bg-blue-50 p-4">
+                            <h4 className="mb-4 text-lg font-semibold text-sky-700">Firma klienta</h4>
+                            <div className="space-y-4 rounded-md border border-sky-200 bg-sky-50 p-4">
                                 <div>
                                     <label htmlFor="companyName" className="block text-sm font-medium text-gray-700">
                                         Nazwa firmy
@@ -226,7 +226,7 @@ export default function Index() {
                                         value={formData.companyName}
                                         onChange={handleCompanySearch}
                                         placeholder="Zacznij wpisywać NAZWĘ FIRMY lub NIP, aby wyszukać... "
-                                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200 bg-white"
+                                        className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200 bg-white"
                                     />
                                     {companyResults.length > 0 && (
                                         <div className="mt-1 rounded-md border border-gray-300 bg-white shadow-sm">
@@ -249,7 +249,7 @@ export default function Index() {
                                     value={formData.companyAddress}
                                     onChange={handleInputChange}
                                     placeholder="Adres"
-                                    className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                    className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                 />
                                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
                                     <input
@@ -259,7 +259,7 @@ export default function Index() {
                                         value={formData.companyZip}
                                         onChange={handleInputChange}
                                         placeholder="Kod pocztowy"
-                                        className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                        className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                     />
                                     <input
                                         type="text"
@@ -268,7 +268,7 @@ export default function Index() {
                                         value={formData.companyCity}
                                         onChange={handleInputChange}
                                         placeholder="Miasto"
-                                        className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200 sm:col-span-2"
+                                        className="block w-full bg-white rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200 sm:col-span-2"
                                     />
                                 </div>
                                 <input
@@ -278,12 +278,12 @@ export default function Index() {
                                     value={formData.companyNip}
                                     onChange={handleInputChange}
                                     placeholder="NIP"
-                                    className="block w-full rounded-md border bg-white border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                    className="block w-full rounded-md border bg-white border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                                 />
                                 {showNewCompanyBtn && (
                                     <button
                                         type="button"
-                                        className="mt-2 rounded-md bg-indigo-600  px-3 py-1.5 text-sm text-white shadow-sm hover:bg-indigo-700"
+                                        className="mt-2 rounded-md bg-sky-600  px-3 py-1.5 text-sm text-white shadow-sm hover:bg-sky-700"
                                     >
                                         Dodaj nową firmę
                                     </button>
@@ -293,8 +293,8 @@ export default function Index() {
 
                         {/* Sekcja Maszyny */}
                         <div className="border-t pt-6">
-                            <h4 className="mb-4 text-lg font-semibold text-indigo-700">Serwisowana maszyna</h4>
-                            <div className="space-y-4 rounded-md border border-indigo-200 bg-indigo-50 p-4">
+                            <h4 className="mb-4 text-lg font-semibold text-sky-700">Serwisowana maszyna</h4>
+                            <div className="space-y-4 rounded-md border border-sky-200 bg-sky-50 p-4">
                                 <div>
                                     <label htmlFor="machineName" className="block text-sm font-medium text-gray-700">
                                         Nazwa urządzenia
@@ -312,7 +312,7 @@ export default function Index() {
                                             value={formData.machineName}
                                             onChange={handleMachineSearch}
                                             placeholder="Zacznij wpisywać, aby wyszukać..."
-                                            className={`block w-full rounded-md bg-white border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200 ${showMachineImage ? 'pl-12' : ''}`}
+                                            className={`block w-full rounded-md bg-white border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200 ${showMachineImage ? 'pl-12' : ''}`}
                                         />
                                     </div>
                                     {machineResults.length > 0 && (
@@ -333,7 +333,7 @@ export default function Index() {
                                 {showNewMachineBtn && (
                                     <button
                                         type="button"
-                                        className="mt-2 rounded-md bg-indigo-600 px-3 py-1.5 text-sm text-white shadow-sm hover:bg-indigo-700"
+                                        className="mt-2 rounded-md bg-sky-600 px-3 py-1.5 text-sm text-white shadow-sm hover:bg-sky-700"
                                     >
                                         Dodaj nową maszynę
                                     </button>
@@ -343,7 +343,7 @@ export default function Index() {
 
                         {/* Opis zgłoszenia */}
                         <div className="border-t pt-6">
-                            <label htmlFor="requestDescription" className="mb-4 block text-lg font-semibold text-indigo-700">
+                            <label htmlFor="requestDescription" className="mb-4 block text-lg font-semibold text-sky-700">
                                 Opis zgłoszenia
                             </label>
                             <textarea
@@ -352,13 +352,13 @@ export default function Index() {
                                 value={formData.requestDescription}
                                 onChange={handleInputChange}
                                 rows="4"
-                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-200"
+                                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-sky-500 focus:ring-sky-200"
                             ></textarea>
                         </div>
 
                         {/* Przypisani serwisanci */}
                         <div className="border-t pt-6">
-                            <h4 className="mb-4 text-lg font-semibold text-indigo-700">Przypisz serwisantów</h4>
+                            <h4 className="mb-4 text-lg font-semibold text-sky-700">Przypisz serwisantów</h4>
                             <div className="space-y-1">
                                 {techniciansDB.map((tech) => (
                                     <div key={tech.id} className="flex items-center justify-between rounded-md p-2.5 hover:bg-gray-100">
@@ -367,18 +367,18 @@ export default function Index() {
                                                 type="checkbox"
                                                 checked={formData.assignedTechnicians.includes(tech.id)}
                                                 onChange={() => handleTechnicianToggle(tech.id)}
-                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                                className="h-4 w-4 rounded border-gray-300 text-sky-600 focus:ring-sky-500"
                                             />
                                             <span>{tech.name}</span>
                                         </label>
                                         {formData.assignedTechnicians.includes(tech.id) && (
-                                            <label className="flex cursor-pointer items-center space-x-1.5 rounded-full bg-indigo-100 px-2 py-0.5 text-sm text-indigo-700">
+                                            <label className="flex cursor-pointer items-center space-x-1.5 rounded-full bg-sky-100 px-2 py-0.5 text-sm text-sky-700">
                                                 <input
                                                     type="radio"
                                                     name="mainTechnician"
                                                     checked={formData.mainTechnician === tech.id}
                                                     onChange={() => handleSetMainTechnician(tech.id)}
-                                                    className="h-3 w-3 text-indigo-600 focus:ring-indigo-500"
+                                                    className="h-3 w-3 text-sky-600 focus:ring-sky-500"
                                                 />
                                                 <span>Główny</span>
                                             </label>
@@ -398,7 +398,7 @@ export default function Index() {
                             </button>
                             <button
                                 type="submit"
-                                className="rounded-md bg-indigo-600 px-6 py-2.5 font-medium text-white shadow-sm transition-all hover:bg-indigo-700 hover:shadow-md"
+                                className="rounded-md bg-sky-600 px-6 py-2.5 font-medium text-white shadow-sm transition-all hover:bg-sky-700 hover:shadow-md"
                             >
                                 Utwórz zlecenie
                             </button>
