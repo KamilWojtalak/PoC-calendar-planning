@@ -35,6 +35,12 @@ export default function Navigation() {
                         >
                             Widok technika
                         </Link>
+                        <Link
+                            href={route('services.create')}
+                            className="inline-block rounded-sm border border-blue-400 bg-blue-500 text-white px-5 py-1.5 text-sm leading-normal hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
+                        >
+                            Nowe Zlecenie Serwisowe
+                        </Link>
                     </nav>
                 </header>
             </div>

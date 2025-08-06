@@ -23,3 +23,7 @@ Route::get('/kalendarz', function () {
 Route::get('/technik', function () {
     return Inertia::render('Technician/Index');
 })->name('technician.index');
+
+Route::get('/zlecenia-serwisowe/stworz', function () {
+    return Inertia::render('Services/Create');
+})->name('services.create');
