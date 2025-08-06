@@ -15,3 +15,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';
+
+Route::get('/kalendarz', function () {
+    return Inertia::render('Calendar/Index');
+})->name('calendar.index');
+
+Route::get('/technik', function () {
+    return Inertia::render('Technician/Index');
+})->name('technician.index');

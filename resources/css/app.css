@@ -139,3 +139,64 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* FULL CALENDAR */
+.fc-day {
+    padding: 0.5rem !important;
+    transition: .5s;
+}
+
+.fc-day:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(239 246 255 / var(--tw-bg-opacity, 1));
+    cursor: pointer;
+}
+
+.fc-day-today {
+    background-color: oklch(96.2% 0.044 156.743) !important;
+    transition: .5s;
+}
+
+.fc-day-today:hover {
+    background-color: oklch(93.821% 0.08792 156.81) !important;
+}
+
+.fc-day-other {
+    background-color: oklch(92.758% 0.00592 264.656 / 0.8) !important;
+}
+
+.fc-event {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    padding: 0.25rem;
+    border-radius: 0.375rem;
+    margin-bottom: 0.5rem !important;
+    transition: .5s;
+}
+
+.fc-event:hover {
+    background-color: rgb(154, 198, 255) !important;
+}
+
+.fc-scrollgrid-section-body tr[role='row'] {
+    height: 130px !important;
+}
+
+.fc .fc-daygrid-day-top {
+    flex-direction: row;
+}
+
+.fc-prev-button,
+.fc-next-button {
+    border-radius: 50% !important;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem !important;
+}
+
+.fc-next-button {
+    margin-left: 0.5rem !important;
+}
+/* FULL CALENDAR */
