@@ -1,3 +1,4 @@
+import PwaInstallBanner from '@/components/PwaInstallBanner';
 import Navigation from '@/components/Navigation';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
@@ -12,6 +13,7 @@ export default function Welcome() {
                 <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
             </Head>
             <Navigation />
+            <PwaInstallBanner />
         </>
     );
 }
