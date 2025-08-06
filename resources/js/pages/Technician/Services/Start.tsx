@@ -136,28 +136,35 @@ export default function App() {
                     {/* Rozliczenie czasu pracy */}
                      <section>
                         <h3 className="text-xl font-semibold text-sky-700 mb-4">Rozliczenie czasu pracy</h3>
-                        {/* Nagłówki dla widoku desktopowego */}
-                        <div className="hidden md:grid md:grid-cols-5 gap-4 mb-2 px-4">
-                            <span className="text-sm font-medium text-gray-700">Data</span>
-                            <span className="text-sm font-medium text-gray-700">Od</span>
-                            <span className="text-sm font-medium text-gray-700">Do</span>
-                            <span className="text-sm font-medium text-gray-700">L. serwisantów</span>
-                        </div>
                         <div className="space-y-4">
                             {workTimes.map((time, index) => (
-                                <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center p-4 md:p-2 border rounded-md bg-gray-50 relative">
-                                    <input type="date" name="date" value={time.date} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="time" name="from" value={time.from} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="time" name="to" value={time.to} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="number" name="technicians" placeholder="L. serwisantów" value={time.technicians} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <button type="button" onClick={() => removeWorkTime(index)} className="absolute top-2 right-2 text-gray-400 hover:text-red-600 p-1 rounded-full hover:bg-red-100 md:static"><DeleteIcon /></button>
+                                <div key={index} className="p-4 border rounded-md bg-gray-50 relative">
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        <div className="col-span-2 md:col-span-1">
+                                            <label htmlFor={`workDate-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Data</label>
+                                            <input id={`workDate-${index}`} type="date" name="date" value={time.date} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                        </div>
+                                        <div>
+                                            <label htmlFor={`workFrom-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Od</label>
+                                            <input id={`workFrom-${index}`} type="time" name="from" value={time.from} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                        </div>
+                                        <div>
+                                            <label htmlFor={`workTo-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Do</label>
+                                            <input id={`workTo-${index}`} type="time" name="to" value={time.to} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                        </div>
+                                        <div className="col-span-2 md:col-span-1">
+                                            <label htmlFor={`workTechs-${index}`} className="block text-sm font-medium text-gray-700 mb-1">L. serwisantów</label>
+                                            <input id={`workTechs-${index}`} type="number" name="technicians" placeholder="L. serwisantów" value={time.technicians} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                        </div>
+                                    </div>
+                                    <button type="button" onClick={() => removeWorkTime(index)} className="absolute top-2 right-2 text-gray-400 hover:text-red-600 p-1 rounded-full hover:bg-red-100"><DeleteIcon /></button>
                                 </div>
                             ))}
                         </div>
                         <button type="button" onClick={addWorkTime} className="mt-4 flex items-center space-x-2 px-3 py-1.5 border-2 border-dashed border-gray-300 text-gray-500 rounded-md hover:border-sky-500 hover:text-sky-600 transition-colors">
                             <AddIcon /><span>Dodaj czas pracy</span>
                         </button>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                             <div>
                                 <label className="block text-sm font-medium text-gray-700">Godziny dojazdu (łącznie)</label>
                                 <input type="number" value={travelHours} onChange={e => setTravelHours(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md"/>
