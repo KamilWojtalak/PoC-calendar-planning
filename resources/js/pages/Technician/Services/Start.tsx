@@ -20,17 +20,18 @@ const SignatureIcon = () => (
 
 // --- Główny komponent formularza edycji ---
 export default function App() {
+    const currentDate = new Date().toISOString().split('T')[0];
     const [serviceDate, setServiceDate] = useState('');
-    const [activities, setActivities] = useState([{ date: '', name: '', description: '' }]);
+    const [activities, setActivities] = useState([{ date: currentDate, name: '', description: '' }]);
     const [recommendations, setRecommendations] = useState('');
     const [machineStatusOnArrival, setMachineStatusOnArrival] = useState('pracowala');
     const [machineStatusOnDeparture, setMachineStatusOnDeparture] = useState('sprawna');
-    const [workTimes, setWorkTimes] = useState([{ date: '', from: '', to: '', technicians: 1 }]);
+    const [workTimes, setWorkTimes] = useState([{ date: currentDate, from: '', to: '', technicians: 1 }]);
     const [travelHours, setTravelHours] = useState(0);
     const [hotel, setHotel] = useState(false);
 
     useEffect(() => {
-        setServiceDate(new Date().toISOString().split('T')[0]);
+        setServiceDate(currentDate);
     }, []);
 
     // --- Handlery dla czynności ---
@@ -39,7 +40,7 @@ export default function App() {
         values[index][event.target.name] = event.target.value;
         setActivities(values);
     };
-    const addActivity = () => setActivities([...activities, { date: '', name: '', description: '' }]);
+    const addActivity = () => setActivities([...activities, { date: currentDate, name: '', description: '' }]);
     const removeActivity = (index) => {
         const values = [...activities];
         values.splice(index, 1);
@@ -52,7 +53,7 @@ export default function App() {
         values[index][event.target.name] = event.target.value;
         setWorkTimes(values);
     };
-    const addWorkTime = () => setWorkTimes([...workTimes, { date: '', from: '', to: '', technicians: 1 }]);
+    const addWorkTime = () => setWorkTimes([...workTimes, { date: currentDate, from: '', to: '', technicians: 1 }]);
     const removeWorkTime = (index) => {
         const values = [...workTimes];
         values.splice(index, 1);
@@ -72,10 +73,10 @@ export default function App() {
             <main className="container mx-auto p-6">
                 <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl mx-auto space-y-8">
                     {/* Nagłówek formularza */}
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-4">
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-2 sm:mb-0">Raport Serwisowy - ZSR-S/25/08/01</h2>
+                    <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start border-b pb-4">
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-2 sm:mb-0 text-center md:text-left">Raport Serwisowy - <br />ZSR-S/25/08/01</h2>
                         <div>
-                            <label htmlFor="serviceDate" className="block text-sm font-medium text-gray-700">Data wystawienia</label>
+                            <label htmlFor="serviceDate" className="block text-sm font-medium text-gray-700 text-center">Data wystawienia</label>
                             <input type="date" id="serviceDate" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-sky-500 focus:ring-sky-200"/>
                         </div>
                     </div>
