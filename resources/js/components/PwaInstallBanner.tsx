@@ -74,7 +74,7 @@ export default function PwaInstallBanner() {
                 </button>
 
                 <div className="flex items-center">
-                    <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4 shrink-0">
+                    <div className="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mr-4 shrink-0">
                         {/* PWA App Icon */}
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -90,7 +90,7 @@ export default function PwaInstallBanner() {
                 {deferredPrompt && !isIOS ? (
                     <button
                         onClick={handleInstallClick}
-                        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md whitespace-nowrap"
+                        className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded-md whitespace-nowrap"
                     >
                         Zainstaluj
                     </button>
