@@ -30,7 +30,6 @@ export default function Index() {
                     eventColor={'rgb(219 234 254 / 1)'}
                     buttonText={{
                         dayGridMonth: 'Miesiąc',
-                        timeGrid: 'Terminarz',
                      }}
                     timeZone="local"
                     locale={'pl'}
