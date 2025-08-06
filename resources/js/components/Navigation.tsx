@@ -6,38 +6,38 @@ export default function Navigation() {
                 <header className="mb-6 w-full max-w-[335px] text-sm not-has-[nav]:hidden lg:max-w-4xl">
                     <nav className="flex items-center justify-center gap-4 flex-wrap">
                         <Link
-                            href={route('calendar.index')}
+                            href={route('dashboard.manager.index')}
                             className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#20200a] hover:border-[#19140035]"
                         >
                             Kalendarz
                         </Link>
                         <Link
-                            href={'#'}
+                            href={route('machines.index')}
                             className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035]"
                         >
                             Maszyny
                         </Link>
                         <Link
-                            href={'#'}
+                            href={route('clients.index')}
                             className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035]"
                         >
                             Klienci
                         </Link>
                         <Link
-                            href={'#'}
+                            href={route('service-workers.index')}
                             className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035]"
                         >
                             Technicy
                         </Link>
                         <Link
-                            href={route('technician.index')}
+                            href={route('dashboard.technician.index')}
                             className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
                         >
                             Widok technika
                         </Link>
                         <Link
                             href={route('services.create')}
-                            className="inline-block rounded-sm border border-blue-400 bg-blue-500 text-white px-5 py-1.5 text-sm leading-normal hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
+                            className="inline-block rounded-sm border border-sky-400 bg-sky-500 text-white px-5 py-1.5 text-sm leading-normal hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
                         >
                             Nowe Zlecenie Serwisowe
                         </Link>
