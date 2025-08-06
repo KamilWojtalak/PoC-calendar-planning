@@ -41,7 +41,7 @@ const handleSystemThemeChange = () => {
 export function initializeTheme() {
     const savedAppearance = (localStorage.getItem('appearance') as Appearance) || 'system';
 
-    applyTheme(savedAppearance);
+    applyTheme('light');
 
     // Add the event listener for system theme changes...
     mediaQuery()?.addEventListener('change', handleSystemThemeChange);
