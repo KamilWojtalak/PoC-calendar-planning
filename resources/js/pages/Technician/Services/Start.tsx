@@ -72,8 +72,8 @@ export default function App() {
             <main className="container mx-auto p-6">
                 <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 w-full max-w-4xl mx-auto space-y-8">
                     {/* Nagłówek formularza */}
-                    <div className="flex justify-between items-center border-b pb-4 md:flex-row flex-col">
-                        <h2 className="text-2xl font-semibold text-gray-800 text-center md:text-left">Raport Serwisowy - ZSR-S/25/08/01</h2>
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b pb-4">
+                        <h2 className="text-2xl font-semibold text-gray-800 mb-2 sm:mb-0">Raport Serwisowy - ZSR-S/25/08/01</h2>
                         <div>
                             <label htmlFor="serviceDate" className="block text-sm font-medium text-gray-700">Data wystawienia</label>
                             <input type="date" id="serviceDate" value={serviceDate} onChange={(e) => setServiceDate(e.target.value)} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:border-sky-500 focus:ring-sky-200"/>
@@ -87,10 +87,19 @@ export default function App() {
                             {activities.map((activity, index) => (
                                 <div key={index} className="p-4 border rounded-md bg-gray-50 space-y-3 relative">
                                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                                        <input type="date" name="date" value={activity.date} onChange={e => handleActivityChange(index, e)} className="md:col-span-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"/>
-                                        <input type="text" name="name" placeholder="Nazwa czynności" value={activity.name} onChange={e => handleActivityChange(index, e)} className="md:col-span-3 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"/>
+                                        <div>
+                                            <label htmlFor={`activityDate-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Data</label>
+                                            <input id={`activityDate-${index}`} type="date" name="date" value={activity.date} onChange={e => handleActivityChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"/>
+                                        </div>
+                                        <div className="md:col-span-3">
+                                            <label htmlFor={`activityName-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Nazwa czynności</label>
+                                            <input id={`activityName-${index}`} type="text" name="name" placeholder="np. Wymiana filtra oleju" value={activity.name} onChange={e => handleActivityChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"/>
+                                        </div>
                                     </div>
-                                    <textarea name="description" placeholder="Opis czynności..." value={activity.description} onChange={e => handleActivityChange(index, e)} rows="2" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+                                    <div>
+                                        <label htmlFor={`activityDesc-${index}`} className="block text-sm font-medium text-gray-700 mb-1">Opis</label>
+                                        <textarea id={`activityDesc-${index}`} name="description" placeholder="Opis czynności..." value={activity.description} onChange={e => handleActivityChange(index, e)} rows="2" className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"></textarea>
+                                    </div>
                                     <button type="button" onClick={() => removeActivity(index)} className="absolute top-2 right-2 text-gray-400 hover:text-red-600 p-1 rounded-full hover:bg-red-100"><DeleteIcon /></button>
                                 </div>
                             ))}
@@ -127,13 +136,20 @@ export default function App() {
                     {/* Rozliczenie czasu pracy */}
                      <section>
                         <h3 className="text-xl font-semibold text-sky-700 mb-4">Rozliczenie czasu pracy</h3>
+                        {/* Nagłówki dla widoku desktopowego */}
+                        <div className="hidden md:grid md:grid-cols-5 gap-4 mb-2 px-4">
+                            <span className="text-sm font-medium text-gray-700">Data</span>
+                            <span className="text-sm font-medium text-gray-700">Od</span>
+                            <span className="text-sm font-medium text-gray-700">Do</span>
+                            <span className="text-sm font-medium text-gray-700">L. serwisantów</span>
+                        </div>
                         <div className="space-y-4">
                             {workTimes.map((time, index) => (
-                                <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center p-4 border rounded-md bg-gray-50 relative">
-                                    <input type="date" name="date" value={time.date} onChange={e => handleWorkTimeChange(index, e)} className="md:col-span-1 block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="time" name="from" value={time.from} onChange={e => handleWorkTimeChange(index, e)} className="md:col-span-1 block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="time" name="to" value={time.to} onChange={e => handleWorkTimeChange(index, e)} className="md:col-span-1 block w-full px-3 py-2 border border-gray-300 rounded-md"/>
-                                    <input type="number" name="technicians" placeholder="L. serwisantów" value={time.technicians} onChange={e => handleWorkTimeChange(index, e)} className="md:col-span-1 block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                <div key={index} className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center p-4 md:p-2 border rounded-md bg-gray-50 relative">
+                                    <input type="date" name="date" value={time.date} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                    <input type="time" name="from" value={time.from} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                    <input type="time" name="to" value={time.to} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
+                                    <input type="number" name="technicians" placeholder="L. serwisantów" value={time.technicians} onChange={e => handleWorkTimeChange(index, e)} className="block w-full px-3 py-2 border border-gray-300 rounded-md"/>
                                     <button type="button" onClick={() => removeWorkTime(index)} className="absolute top-2 right-2 text-gray-400 hover:text-red-600 p-1 rounded-full hover:bg-red-100 md:static"><DeleteIcon /></button>
                                 </div>
                             ))}
@@ -159,14 +175,14 @@ export default function App() {
                     {/* Podpisy i akcje */}
                     <div className="border-t pt-6 space-y-4">
                          <h3 className="text-xl font-semibold text-sky-700 mb-4">Podpisy</h3>
-                         <div className="flex space-x-4">
+                         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
                             <button type="button" className="flex items-center justify-center w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"><SignatureIcon /> Podpis serwisanta</button>
                             <button type="button" className="flex items-center justify-center w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"><SignatureIcon /> Podpis zleceniodawcy</button>
                          </div>
                     </div>
-                    <div className="mt-10 flex justify-end space-x-4 border-t pt-6">
+                    <div className="mt-10 flex flex-col sm:flex-row justify-end space-y-3 sm:space-y-0 sm:space-x-4 border-t pt-6">
                         <button type="submit" className="px-6 py-2.5 bg-gray-600 text-white rounded-md hover:bg-gray-700 font-medium shadow-sm transition-all">Zapisz serwis</button>
-                        <button type="submit" className="px-6 py-2.5 bg-sky-500 text-white rounded-md hover:bg-sky-700 font-medium shadow-sm transition-all">Zakończ serwis</button>
+                        <button type="submit" className="px-6 py-2.5 bg-sky-600 text-white rounded-md hover:bg-sky-700 font-medium shadow-sm transition-all">Zakończ serwis</button>
                     </div>
                 </form>
             </main>
