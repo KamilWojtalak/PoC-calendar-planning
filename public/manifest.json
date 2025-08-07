@@ -1,7 +1,7 @@
 {
-  "name": "PWA Calendar Planning",
-  "short_name": "CalendarPlanning",
-  "description": "App for planning and managing calendar events in a Progressive Web App.",
+  "name": "Serwis CNC",
+  "short_name": "SerwisCNC",
+  "description": "App for managing CNC services.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
