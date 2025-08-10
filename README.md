@@ -8,3 +8,8 @@ sail npm install @fullcalendar/react @fullcalendar/core @fullcalendar/daygrid @f
 ```
 sail npm install react-device-detect --save
 ```
+
+```
+sail npm install react-signature-canvas
+sail npm install --save-dev @types/react-signature-canvas
+```
