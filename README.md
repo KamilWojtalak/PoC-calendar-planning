@@ -13,3 +13,8 @@ sail npm install react-device-detect --save
 sail npm install react-signature-canvas
 sail npm install --save-dev @types/react-signature-canvas
 ```
+
+PDFs
+```
+sail composer require barryvdh/laravel-dompdf
+```
