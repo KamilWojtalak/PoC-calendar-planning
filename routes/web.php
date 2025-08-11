@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PdfController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -54,3 +55,9 @@ Route::get('/klienci', function () {
 Route::get('/maszyny', function () {
     return Inertia::render('Machines/Index');
 })->name('machines.index');
+
+Route::get('/pdf', [PdfController::class, 'index'])
+     ->name('pdf.index');
+
+// Route::get('/pdf/test', [PdfController::class, 'test'])
+//      ->name('pdf.test');
